@@ -1,17 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from "./App"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+// const date = new Date()
+// const hours = date.getHours()
+// let timeofday
+
+// const styles ={
+//   fontSize:30
+// }
+
+
+// if(hours<12){
+//   timeofday="Good Morning"
+//   styles.color="#B83227"
+// }else if(hours>12 && hours<17){
+//   timeofday="Good AfterNoon"
+//   styles.color="##F4C724"
+// }else if(hours>=17 && hours<=
+//   22){
+//   timeofday="Good Evening"
+//   styles.color="#218F76"
+// }else{
+//   timeofday="Good Night"
+//   styles.color="#30336B"
+// }
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <Header/> 
+   <App/>
+   <Footer/>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
