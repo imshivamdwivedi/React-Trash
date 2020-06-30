@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./App"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Form from "./Form"
+// import App from "./App"
+// import Header from "./components/Header"
+// import Footer from "./components/Footer"
 // const date = new Date()
 // const hours = date.getHours()
 // let timeofday
@@ -29,9 +30,7 @@ import Footer from "./components/Footer"
 
 ReactDOM.render(
   <React.StrictMode>
-   <Header/> 
-   <App/>
-   <Footer/>
+   <Form/>
   </React.StrictMode>,
   document.getElementById('root')
 );

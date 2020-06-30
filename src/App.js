@@ -5,35 +5,35 @@ import todosData from "./components/ToDoData"
 
 
 class App extends React.Component {
- //event handler  
- constructor(props){
-   super(props);
-   this.state = {
-     isToggleIn :true
-    };
-   this.handleClick = this.handleClick.bind(this);
- }
 
- handleClick(){
-   this.setState(state=>({
-     isToggleIn:!state.isToggleIn
-   }))
- }
-  // constructor(){
-  //   super();
-  //   this.state ={
-  //     todos:todosData
-  //   }
-  // }
+  constructor(){
+    super();
+    this.state ={
+      todos:todosData
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(id){
+  //update state
+   this.setState(prevState=>{
+     const updateTodos = prevState.todos.map(todo=>{
+       if(todo.id===id){
+         todo.completed = !todo.completed
+       }
+       return todo
+     })
+
+      return { todos: updateTodos }
+   })
+   
+    
+  }
 
   render(){
-    // const todoComponents = this.state.todos.map(todo=> <ToDoItem key={todo.id} items={todo}/>)
+    const todoComponents = this.state.todos.map(todo=> <ToDoItem key={todo.id} item={todo} handleChange={this.handleChange}/>)
     return (
        <div className="todo-list">
-         {/* {todoComponents} */}
-         <button onClick={this.handleClick}>
-           {this.state.isToggleIn?'ON':'Off'}
-         </button>
+         {todoComponents}
        </div>
     )
   }
